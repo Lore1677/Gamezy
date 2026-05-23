@@ -1,0 +1,53 @@
+/* ============================
+    Info Styles
+============================ */
+:root {
+  --primary-color: #4cacaf;
+  --primary-hover: #3a9da1;
+  --light-primary: #8e3b9c;
+  --light-hover: #7b2589;
+  --background-dark: #22232a;
+  --background-light: white;
+  --text-dark: #b0b8c0;
+  --text-light: #333;
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --date: rgba(128, 128, 128, 0.5);
+}
+
+.discover-title {
+  font-family: "Press Start 2P", cursive;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: clamp(24px, 5vw, 36px);
+  text-shadow: 2px 2px var(--shadow-dark);
+}
+
+h2 {
+  font-family: "Press Start 2P", cursive;
+  color: var(--primary-color);
+  font-size: 18px;
+}
+
+body.light-theme .discover-title,
+body.light-theme h2 {
+  color: var(--light-primary);
+}
+
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  overflow-y: auto;
+}
+
+.date {
+  font-family: "Times New Roman", Times, cursive;
+  color: var(--date);
+  font-style: italic;
+}

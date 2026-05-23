@@ -1,0 +1,305 @@
+/* ============================
+   Stili Form di Login
+============================ */
+:root {
+  /* Colori */
+  --primary-color: #4cacaf;
+  --primary-hover: #458ea0;
+  --light-primary: #8e3b9c;
+  --light-primary-hover: #9c27b0;
+  --text-dark: #b0b8c0;
+  --text-light: #333333;
+  --text-secondary-dark: #8a9199;
+  --text-secondary-light: #666666;
+  --bg-dark-gradient: linear-gradient(135deg, #22232a, #1a1a1f);
+  --bg-light-gradient: linear-gradient(135deg, #ffffff, #f2f2f2);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --bg-input-dark: #1a1a1f;
+  --bg-input-light: #ffffff;
+  --border-dark: #444;
+  --border-light: #ccc;
+  --error-color: #ff4d4d;
+
+  /* Spaziatura */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 25px;
+  --spacing-xxl: 30px;
+  --spacing-xxxl: 40px;
+  --spacing-xxxxl: 60px;
+
+  /* Raggio bordo */
+  --border-radius-sm: 8px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 25px;
+}
+
+/* Contenitore principale del form */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  min-height: calc(100vh - 150px);
+  padding: 15vh 20px 60px;
+  box-sizing: border-box;
+  perspective: 1000px;
+  transition: all 0.5s ease;
+}
+
+/* Blocco login personalizzato */
+.login-container {
+  background: var(--bg-dark-gradient);
+  padding: var(--spacing-xxxl) var(--spacing-xxxxl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  width: 450px;
+  max-width: 100%;
+  margin: 0 0 var(--spacing-xxxl) 0;
+
+  /* Proprietà animazione */
+  opacity: 0;
+  transform: scale(0.8) rotateY(-30deg);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.login-container.active {
+  opacity: 1;
+  transform: scale(1) rotateY(0);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text-dark);
+}
+
+.input-group {
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-group.focused label {
+  color: var(--primary-color);
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-size: 16px;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  pointer-events: none;
+  transform-origin: left;
+}
+
+.input-group input {
+  width: calc(100% - 30px);
+  max-width: 420px;
+  padding: var(--spacing-sm);
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-input-dark);
+  color: var(--text-dark);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(76, 172, 175, 0.3);
+}
+
+.input-group input::placeholder {
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.input-group input:focus::placeholder {
+  opacity: 0.3;
+  transform: translateX(10px);
+}
+
+/* Stato errore input */
+.input-group.error input {
+  border-color: var(--error-color);
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+button {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.5s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-container p {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  color: var(--text-dark);
+}
+
+.login-container a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Stili avviso errore */
+.error-alert {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--error-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.error-alert.show {
+  top: -10px;
+  opacity: 1;
+}
+
+/* Animazione successo */
+.login-success,
+.register-success {
+  animation: successPulse 0.6s;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ============================
+   Override per il tema chiaro
+============================ */
+body.light-theme .login-container {
+  background: var(--bg-light-gradient);
+  box-shadow: 0 10px 25px var(--shadow-light);
+}
+
+body.light-theme .login-container h2 {
+  color: var(--text-light);
+}
+
+body.light-theme .input-group label {
+  color: var(--text-light);
+}
+
+body.light-theme .input-group input {
+  background-color: var(--bg-input-light);
+  color: var(--text-light);
+  border: 1px solid var(--border-light);
+}
+
+body.light-theme .input-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(76, 172, 175, 0.5);
+}
+
+body.light-theme button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+body.light-theme button:hover {
+  background-color: var(--primary-hover);
+}
+
+body.light-theme .login-container a {
+  color: var(--primary-color);
+}
+
+body.light-theme .login-container p {
+  color: var(--text-secondary-light);
+}

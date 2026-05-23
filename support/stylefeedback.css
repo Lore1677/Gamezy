@@ -1,0 +1,212 @@
+/* ============================
+      Feedback Section Styles
+  ============================ */
+:root {
+  /* Colors */
+  --primary-color: #4cacaf;
+  --primary-hover: #458ea0;
+  --light-primary: #8e3b9c;
+  --light-primary-hover: #9c27b0;
+  --text-dark: #b0b8c0;
+  --text-light: #333333;
+  --text-secondary-dark: #8a9199;
+  --text-secondary-light: #666666;
+  --bg-dark-gradient: linear-gradient(135deg, #22232a, #1a1a1f);
+  --bg-light-gradient: linear-gradient(135deg, #ffffff, #f2f2f2);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --bg-input-dark: #1a1a1f;
+  --bg-input-light: #f1f1f1;
+  --border-dark: #444;
+  --border-light: #ddd;
+
+  /* Spazi */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 25px;
+  --spacing-xxl: 30px;
+  --spacing-xxxl: 40px;
+  --spacing-xxxxl: 60px;
+
+  /* Ratio bordi */
+  --border-radius-sm: 8px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 25px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 15vh 20px 0;
+}
+
+.feedback-container {
+  background: var(--bg-dark-gradient);
+  padding: var(--spacing-xxxl) var(--spacing-xxxxl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  width: 500px;
+  max-width: 100%;
+  margin: 0;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(76, 172, 175, 0.5);
+}
+
+h2 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-dark);
+}
+
+p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-secondary-dark);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+select,
+button {
+  margin-bottom: var(--spacing-md);
+  padding: 12px;
+  border: 1px solid var(--border-dark);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-input-dark);
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23B0B8C0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 12px auto;
+  padding-right: 30px;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Stelle rating */
+.rating {
+  margin-bottom: var(--spacing-md);
+}
+
+.rating p {
+  display: inline-block;
+  margin-right: var(--spacing-sm);
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.stars {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  vertical-align: middle;
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3e%3c/polygon%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%234cacaf' stroke='%234cacaf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3e%3c/polygon%3e%3c/svg%3e");
+}
+
+/* ============================
+      Override per il tema chiaro
+  ============================ */
+body.light-theme .feedback-container {
+  background: var(--bg-light-gradient);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+body.light-theme h2 {
+  color: var(--text-light);
+}
+
+body.light-theme p {
+  color: var(--text-secondary-light);
+}
+
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select,
+body.light-theme button {
+  border: 1px solid var(--border-light);
+}
+
+body.light-theme button {
+  background-color: var(--light-primary);
+  color: white;
+}
+
+body.light-theme button:hover {
+  background-color: var(--light-primary-hover);
+}
+
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+  background-color: var(--bg-input-light);
+  color: var(--bg-input-dark);
+}
+
+body.light-theme select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+body.light-theme .stars label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3e%3c/polygon%3e%3c/svg%3e");
+}
+
+body.light-theme .stars input:checked ~ label,
+body.light-theme .stars label:hover,
+body.light-theme .stars label:hover ~ label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%238e3b9c' stroke='%238e3b9c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3e%3c/polygon%3e%3c/svg%3e");
+}

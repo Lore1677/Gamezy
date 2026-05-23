@@ -1,0 +1,305 @@
+/* Variabili per colori e dimensioni */
+:root {
+  /* Colori primari - tema scuro predefinito */
+  --text-color: #ffffff;
+  --button-text-color: #ffffff;
+
+  --grid-bg: #222222;
+  --cell-bg: #333333;
+  --cell-revealed-bg: #424242;
+
+  /* Colori gradiente */
+  --gradient-start: #4cacaf;
+  --gradient-end: #458ea0;
+
+  /* Colori tetromini */
+  --tetromino-i: #00bcd4; /* Ciano */
+  --tetromino-j: #2196f3; /* Blu */
+  --tetromino-l: #ff9800; /* Arancione */
+  --tetromino-o: #ffeb3b; /* Giallo */
+  --tetromino-s: #4caf50; /* Verde */
+  --tetromino-t: #9c27b0; /* Viola */
+  --tetromino-z: #f44336; /* Rosso */
+
+  /* Dimensioni */
+  --grid-spacing: 1px;
+  --cell-size: 30px;
+
+  /* Effetti */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Sostituzione tema chiaro */
+body.light-theme {
+  --bg-color: #f5f5f5;
+  --text-color: #333333;
+
+  --grid-bg: rgba(200, 200, 200, 0.7);
+  --cell-bg: #e0e0e0;
+  --cell-revealed-bg: #c0c0c0;
+
+  /* Colori gradiente */
+  --gradient-start: #8e3b9c;
+  --gradient-end: #9c27b0;
+
+  /* Colori tetromini più luminosi */
+  --tetromino-i: #00bcd4;
+  --tetromino-j: #2196f3;
+  --tetromino-l: #ff9800;
+  --tetromino-o: #ffd600;
+  --tetromino-s: #4caf50;
+  --tetromino-t: #9c27b0;
+  --tetromino-z: #f44336;
+}
+
+body {
+  overflow: hidden;
+}
+/* Struttura layout */
+.game-container {
+  max-width: 100%;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+  width: 100%;
+}
+
+#new-game-btn {
+  padding: 8px 16px;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#new-game-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.game-info {
+  display: flex;
+  gap: 20px;
+}
+
+.score-counter,
+.level-counter {
+  background: linear-gradient(135deg, var(--cell-bg), var(--grid-bg));
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease, background 0.3s ease;
+  color: var(--text-color);
+}
+
+/* Layout area di gioco */
+.game-area {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Layout griglia */
+.gameboard-container {
+  position: relative;
+}
+
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(10, var(--cell-size));
+  grid-template-rows: repeat(20, var(--cell-size));
+  gap: var(--grid-spacing);
+  background-color: var(--grid-bg);
+  padding: var(--grid-spacing);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: var(--cell-bg);
+  border: 1px solid var(--cell-border);
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+/* Colori tetromini */
+.cell.tetromino-i {
+  background-color: var(--tetromino-i);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cell.tetromino-j {
+  background-color: var(--tetromino-j);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cell.tetromino-l {
+  background-color: var(--tetromino-l);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cell.tetromino-o {
+  background-color: var(--tetromino-o);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cell.tetromino-s {
+  background-color: var(--tetromino-s);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cell.tetromino-t {
+  background-color: var(--tetromino-t);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cell.tetromino-z {
+  background-color: var(--tetromino-z);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cell.ghost {
+  opacity: 0.3;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.controls-help {
+  background-color: var(--cell-bg);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.controls-help h3 {
+  margin-top: 0;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.controls-help ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.controls-help ul li {
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+/* Overlay game over e pausa */
+.game-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 15, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.overlay-message {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 0 20px;
+  animation: pulse 2s infinite;
+}
+
+.overlay-subtitle {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.overlay-button {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.overlay-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Animazione */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Stile per il titolo del gioco e l'icona */
+.game-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.title-icon {
+  height: 40px;
+  width: auto;
+}

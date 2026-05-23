@@ -1,0 +1,128 @@
+/* ============================
+    Help Section Styles
+============================ */
+:root {
+  /* Coloro */
+  --primary-color: #4cacaf;
+  --primary-hover: #458ea0;
+  --light-primary: #8e3b9c;
+  --light-primary-hover: #9c27b0;
+  --text-dark: #b0b8c0;
+  --text-light: #333333;
+  --bg-dark-gradient: linear-gradient(135deg, #22232a, #1a1a1f);
+  --bg-light-gradient: linear-gradient(135deg, #ffffff, #f2f2f2);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --bg-input-dark: #1a1a1f;
+  --bg-input-light: #f1f1f1;
+  --border-dark: #444;
+  --border-light: #ddd;
+
+  /* Spazi */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 25px;
+  --spacing-xxl: 30px;
+  --spacing-xxxl: 40px;
+  --spacing-xxxxl: 60px;
+
+  /* Ratio bordi */
+  --border-radius-sm: 8px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 25px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 15vh 20px 0;
+}
+
+.help-container {
+  background: var(--bg-dark-gradient);
+  padding: var(--spacing-xxxl) var(--spacing-xxxxl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  width: 450px;
+  max-width: 100%;
+  margin: 0;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(76, 172, 175, 0.5);
+}
+
+h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+button {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-input-dark);
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ============================
+    Override per il tema chiaro
+============================ */
+body.light-theme .help-container {
+  background: var(--bg-light-gradient);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme button {
+  background-color: var(--bg-input-light);
+  color: #ffffff;
+  border: 1px solid var(--border-light);
+}
+
+body.light-theme button {
+  background-color: var(--light-primary);
+}
+
+body.light-theme button:hover {
+  background-color: var(--light-primary-hover);
+}
+
+body.light-theme input,
+body.light-theme textarea {
+  background-color: var(--bg-input-light);
+  color: var(--bg-input-dark);
+  border: 1px solid var(--border-light);
+}

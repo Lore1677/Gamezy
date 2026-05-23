@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tris | Gamezy</title>
+    <link rel="stylesheet" href="tris.css" />
+    <script src="tris.js" defer></script>
+
+    <link rel="stylesheet" href="../../index/css/main.css" />
+
+    <script src="../../index/js/theme.js" defer></script>
+    <script src="../../account/sessionmanager.js"></script>
+  </head>
+  <body>
+    <header class="top-nav">
+      <a href="../../index/home.html" class="nav-logo" id="logo">
+        <img src="../../images/icons/logowhite.png" alt="Logo Gamezy" />
+        <span class="site-name">Gamezy</span>
+      </a>
+      <nav class="nav-links">
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">Supporto</div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../../support/feedback.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/feedback-icon.png"
+                  alt="Feedback Icon"
+                  class="nav-icon"
+                />Feedback
+              </a>
+            </li>
+            <li>
+              <a href="../../support/help.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/help-icon.png"
+                  alt="Help Icon"
+                  class="nav-icon"
+                />Aiuto
+              </a>
+            </li>
+            <li>
+              <a href="../../support/contacts.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/contacts-icon.png"
+                  alt="Contacts Icon"
+                  class="nav-icon"
+                />Chi siamo?
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">
+            <a
+              href="../../games/gamepage.html"
+              class="link-games"
+              id="nav-link-games"
+              >Giochi</a
+            >
+          </div>
+          <ul class="dropdown-menu"></ul>
+        </div>
+        <a href="../../account/login.html" class="nav-link login-btn">Login</a>
+      </nav>
+    </header>
+
+    <h1 class="game-title">
+      Tris<img
+        src="../../images/icons/tris-icon.png"
+        alt="Tris Icon"
+        class="title-icon"
+      />
+    </h1>
+
+    <div class="game-header">
+      <div class="current-player-status">
+        <div class="turn-indicator">
+          Turno di:
+          <span id="current-turn" class="score-value x-symbol">X</span>
+        </div>
+      </div>
+    </div>
+
+    <main class="game-container">
+      <div class="grid-wrapper">
+        <div class="grid-container" id="grid">
+          <div class="grid-cell" data-index="0"></div>
+          <div class="grid-cell" data-index="1"></div>
+          <div class="grid-cell" data-index="2"></div>
+          <div class="grid-cell" data-index="3"></div>
+          <div class="grid-cell" data-index="4"></div>
+          <div class="grid-cell" data-index="5"></div>
+          <div class="grid-cell" data-index="6"></div>
+          <div class="grid-cell" data-index="7"></div>
+          <div class="grid-cell" data-index="8"></div>
+        </div>
+        <div class="mobile-controls"></div>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="player-info-section">
+          <h2>Statistiche</h2>
+          <div class="score-container">
+            <div class="score-box x-player-box">
+              <div class="player-symbol x-symbol">X</div>
+              <div class="score-details">
+                <div class="score-label">VITTORIE</div>
+                <div class="score-value" id="x-wins">0</div>
+              </div>
+            </div>
+            <div class="score-box o-player-box">
+              <div class="player-symbol o-symbol">O</div>
+              <div class="score-details">
+                <div class="score-label">VITTORIE</div>
+                <div class="score-value" id="o-wins">0</div>
+              </div>
+            </div>
+            <div class="score-box tie-box">
+              <div class="score-label">PAREGGI</div>
+              <div class="score-value" id="ties">0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="reset-button" class="primary-button">
+            Nuova Partita
+          </button>
+          <button id="reset-stats" class="secondary-button">
+            Azzera Statistiche
+          </button>
+        </div>
+
+        <div class="instructions">
+          <h3>Come giocare:</h3>
+          <ul>
+            <li>
+              Clicca su una cella vuota per posizionare il tuo simbolo (❌ o ⭕)
+            </li>
+            <li>Il primo giocatore a posizionare tre simboli in fila vince!</li>
+            <li>La fila può essere orizzontale, verticale o diagonale</li>
+            <li>X inizia sempre per primo</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="copyright">© 2025 Gamezy - Tutti i diritti riservati</div>
+        <div class="footer-links">
+          <a href="../../support/footer/privacy.html" class="footer-link"
+            >Privacy</a
+          >
+          <a href="../../support/footer/terms.html" class="footer-link"
+            >Termini di servizio</a
+          >
+          <a href="../../support/footer/cookies.html" class="footer-link"
+            >Cookie</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

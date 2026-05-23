@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gamezy - Benvenuto</title>
+    <link rel="stylesheet" href="index/css/main.css" />
+    <link rel="stylesheet" href="splashscreen.css" />
+  </head>
+  <body>
+    <div class="splash-screen" id="splash">
+      <div class="splash-text">INSERISCI DIAMANTE PER GIOCARE!!!</div>
+      <img src="images/icons/diamond.gif" alt="Logo Gamezy" id="logo" />
+      <div class="click-hint">Clicca sul diamante per iniziare</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const splash = document.getElementById("splash");
+        const logo = document.getElementById("logo");
+
+        // Effetto audio
+        function playClickSound() {
+          const sound = new Audio("sounds/coin.mp3");
+          sound.volume = 0.5;
+          sound.play().catch((e) => console.log("Autoplay prevented:", e));
+        }
+
+        // Nascondi splash screen e reindirizza a homepage
+        function redirectToHome() {
+          logo.removeEventListener("click", redirectToHome);
+          playClickSound();
+          splash.classList.add("fade-out");
+
+          setTimeout(function () {
+            window.location.href = "index/home.html";
+          }, 500);
+        }
+
+        logo.addEventListener("click", redirectToHome);
+      });
+    </script>
+  </body>
+</html>

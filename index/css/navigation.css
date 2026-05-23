@@ -1,0 +1,292 @@
+/* ============================
+    Navigation Styles
+============================ */
+:root {
+  /* Colori */
+  --top-nav-bg: rgba(34, 35, 42, 0.85);
+  --top-nav-border: rgba(255, 255, 255, 0.1);
+  --top-nav-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+    0 12px 30px rgba(0, 0, 0, 0.5);
+  --nav-link-color: #b0b8c0;
+  --nav-link-hover-bg: rgba(255, 255, 255, 0.1);
+  --nav-link-hover-color: #ffffff;
+  --login-btn-bg: rgba(76, 172, 175, 0.85);
+  --login-btn-color: white;
+  --login-btn-box-shadow: 0 2px 8px rgba(76, 172, 175, 0.3);
+  --login-btn-border: rgba(255, 255, 255, 0.1);
+  --login-btn-hover-bg: rgba(69, 142, 160, 0.9);
+  --nav-games-underline: #bdc6cf;
+  --dropdown-bg: rgba(34, 35, 42, 0.7);
+  --dropdown-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.3);
+  --dropdown-border: rgba(255, 255, 255, 0.05);
+  --dropdown-item-color: #b0b8c0;
+  --dropdown-item-hover-bg: rgba(255, 255, 255, 0.1);
+  --dropdown-item-hover-color: #ffffff;
+}
+
+/* Override per il tema chiaro */
+body.light-theme {
+  --top-nav-bg: rgba(255, 255, 255, 0.7);
+  --top-nav-border: rgba(255, 255, 255, 0.3);
+  --top-nav-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 12px 30px rgba(0, 0, 0, 0.15);
+  --nav-link-color: #333333;
+  --nav-link-hover-bg: rgba(0, 0, 0, 0.08);
+  --nav-link-hover-color: #222222;
+  --login-btn-bg: rgba(142, 59, 156, 0.85);
+  --login-btn-box-shadow: 0 2px 8px rgba(138, 43, 226, 0.3);
+  --login-btn-border: rgba(255, 255, 255, 0.2);
+  --login-btn-hover-bg: rgba(156, 39, 176, 0.9);
+  --dropdown-bg: rgba(255, 255, 255, 0.6);
+  --dropdown-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 12px 30px rgba(0, 0, 0, 0.15);
+  --dropdown-border: rgba(255, 255, 255, 0.25);
+  --dropdown-item-color: #333333;
+  --dropdown-item-hover-bg: rgba(0, 0, 0, 0.1);
+  --dropdown-item-hover-color: #000000;
+}
+
+/* ============================
+    Top Navigation
+============================ */
+.top-nav {
+  background: var(--top-nav-bg);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  box-shadow: var(--top-nav-box-shadow);
+  margin: 20px;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--top-nav-border);
+  position: relative;
+  z-index: 100;
+}
+
+body.light-theme .top-nav {
+  background: var(--top-nav-bg);
+  box-shadow: var(--top-nav-box-shadow);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--top-nav-border);
+}
+
+/* ============================
+    Logo Animation
+============================ */
+.nav-logo img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg) scale(1);
+}
+
+.nav-logo img.disable-logo-animations {
+  transition: opacity 0.2s ease !important;
+  transform: rotate(0deg) scale(1) !important;
+}
+
+.nav-logo img.hover-rotate {
+  transform: rotate(-170deg) scale(1.2);
+}
+
+.nav-logo img.leave-rotate {
+  transform: rotate(-170deg) scale(1.2);
+}
+
+.nav-logo img.reset-rotate {
+  animation: resetRotation 0.5s forwards ease;
+}
+
+@keyframes resetRotation {
+  from {
+    transform: rotate(-170deg) scale(1.2);
+  }
+  to {
+    transform: rotate(-360deg) scale(1);
+  }
+}
+
+.site-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 12px;
+  color: var(--nav-link-hover-color);
+  transition: color 0.3s ease;
+}
+
+body.light-theme .site-name {
+  color: var(--nav-link-hover-color);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ============================
+    Navigation Links
+============================ */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--nav-link-hover-bg);
+  color: var(--nav-link-hover-color);
+  backdrop-filter: blur(5px);
+}
+
+body.light-theme .nav-link {
+  color: var(--nav-link-color);
+}
+
+body.light-theme .nav-link:hover {
+  background-color: var(--nav-link-hover-bg);
+  color: var(--nav-link-hover-color);
+  backdrop-filter: blur(5px);
+}
+
+/* ============================
+    Login Button
+============================ */
+.nav-link.login-btn {
+  background-color: var(--login-btn-bg);
+  color: var(--login-btn-color);
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 8px var(--login-btn-box-shadow);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--login-btn-border);
+}
+
+.nav-link.login-btn:hover {
+  background-color: var(--login-btn-hover-bg);
+  transform: scale(1.05);
+}
+
+body.light-theme .nav-link.login-btn {
+  background-color: var(--login-btn-bg);
+  color: var(--login-btn-color);
+  box-shadow: 0 2px 8px var(--login-btn-box-shadow);
+  border: 1px solid var(--login-btn-border);
+}
+
+body.light-theme .nav-link.login-btn:hover {
+  background-color: var(--login-btn-hover-bg);
+  transform: scale(1.05);
+}
+
+/* ============================
+    Games Link 
+============================ */
+#nav-link-games,
+#nav-link-games:visited {
+  position: relative;
+  padding: 0px;
+  text-decoration: none;
+  color: inherit;
+}
+
+#nav-link-games::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-games-underline);
+  transform: translateX(-50%);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#nav-link-games:hover::after {
+  width: 100%;
+}
+
+/* ============================
+    Icons
+============================ */
+.nav-icon,
+.game-icon {
+  width: 30px;
+  height: auto;
+  border-radius: 10%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* ============================
+    Dropdown Menu
+============================ */
+.dropdown {
+  position: relative;
+  z-index: 10;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  min-width: max-content;
+  background: var(--dropdown-bg);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: var(--dropdown-box-shadow);
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dropdown-border);
+}
+
+body.light-theme .dropdown-menu {
+  background: var(--dropdown-bg);
+  box-shadow: var(--dropdown-box-shadow);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dropdown-border);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown .dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--dropdown-item-color);
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--dropdown-item-hover-bg);
+  color: var(--dropdown-item-hover-color);
+  backdrop-filter: blur(5px);
+}
+
+body.light-theme .dropdown-item {
+  color: var(--dropdown-item-color);
+}
+
+body.light-theme .dropdown-item:hover {
+  background-color: var(--dropdown-item-hover-bg);
+  color: var(--dropdown-item-hover-color);
+  backdrop-filter: blur(5px);
+}

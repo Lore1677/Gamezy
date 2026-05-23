@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>2048 Game | Gamezy</title>
+    <link rel="stylesheet" href="../../games/2048/2048.css" />
+    <script src="../../games/2048/2048.js" defer></script>
+
+    <link rel="stylesheet" href="../../index/css/main.css" />
+    <script src="../../index/js/theme.js" defer></script>
+    <script src="../../account/sessionmanager.js"></script>
+  </head>
+  <body>
+    <header class="top-nav">
+      <a href="../../index/home.html" class="nav-logo" id="logo">
+        <img src="../../images/icons/logowhite.png" alt="Logo Gamezy" />
+        <span class="site-name">Gamezy</span>
+      </a>
+      <nav class="nav-links">
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">Supporto</div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../../support/feedback.html" class="dropdown-item"
+                ><img
+                  src="../../images/icons/feedback-icon.png"
+                  alt="Feedback Icon"
+                  class="nav-icon"
+                />Feedback</a
+              >
+            </li>
+            <li>
+              <a href="../../support/help.html" class="dropdown-item"
+                ><img
+                  src="../../images/icons/help-icon.png"
+                  alt="Help Icon"
+                  class="nav-icon"
+                />Aiuto</a
+              >
+            </li>
+            <li>
+              <a href="../../support/contacts.html" class="dropdown-item"
+                ><img
+                  src="../../images/icons/contacts-icon.png"
+                  alt="Contacts Icon"
+                  class="nav-icon"
+                />Chi siamo?</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">
+            <a
+              href="../../games/gamepage.html"
+              class="link-games"
+              id="nav-link-games"
+              >Giochi</a
+            >
+          </div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../../games/2048/2048.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/2048-icon.png"
+                  alt="2048 Icon"
+                  class="nav-icon"
+                />
+                2048
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/banana-click/banana-click.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/banana-click-icon.png"
+                  alt="Banana Click Icon"
+                  class="nav-icon"
+                />
+                Banana click
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/campo-minato/campo-minato.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/campo-minato-icon.png"
+                  alt="Campo Minato Icon"
+                  class="nav-icon"
+                />
+                Campo minato
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/flappy-bird/flappy-bird.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/flappy-bird-icon.png"
+                  alt="Flappy Bird Icon"
+                  class="nav-icon"
+                />
+                Flappy bird
+              </a>
+            </li>
+            <li>
+              <a href="../../games/forza4/forza4.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/forza4-icon.png"
+                  alt="Forza 4 Icon"
+                  class="nav-icon"
+                />
+                Forza 4
+              </a>
+            </li>
+            <li>
+              <a href="../../games/pong/pong.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/pong-icon.png"
+                  alt="Pong Icon"
+                  class="nav-icon"
+                />
+                Pong
+              </a>
+            </li>
+            <li>
+              <a href="../../games/sassocartaforbici/sassocartaforbici.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/sassocartaforbici-icon.png"
+                  alt="Sasso Carta Forbici Icon"
+                  class="nav-icon"
+                />
+                Sasso Carta Forbici
+              </a>
+            </li>
+            <li>
+              <a href="../../games/sudoku/sudoku.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/sudoku-icon.png"
+                  alt="Sudoku Icon"
+                  class="nav-icon"
+                />
+                Sudoku
+              </a>
+            </li>
+            <li>
+              <a href="../../games/tetris/tetris.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/tetris-icon.png"
+                  alt="Tetris Icon"
+                  class="nav-icon"
+                />
+                Tetris
+              </a>
+            </li>
+            <li>
+              <a href="../../games/tris/tris.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/tris-icon.png"
+                  alt="Tris Icon"
+                  class="nav-icon"
+                />
+                Tris
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="../../account/login.html" class="nav-link login-btn">Login</a>
+      </nav>
+    </header>
+
+    <div>
+      <h1 class="game-title">
+        2048<img
+          src="../../images/icons/2048-icon.png"
+          alt="2048 Icon"
+          class="title-icon"
+        />
+      </h1>
+    </div>
+
+    <main class="game-container">
+      <div class="grid-wrapper">
+        <div class="grid-container" id="grid"></div>
+      </div>
+      <div class="content-wrapper">
+        <div class="score-container">
+          <div class="score-box">
+            <div class="score-label">PUNTEGGIO</div>
+            <div class="score-value" id="current-score">0</div>
+          </div>
+          <div class="score-box">
+            <div class="score-label">RECORD</div>
+            <div class="score-value" id="best-score">0</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="reset-button">Nuova Partita</button>
+        </div>
+
+        <div class="instructions">
+          <p><strong>Come giocare:</strong></p>
+          <p>
+            Usa le frecce ⬅️ ⬆️ ➡️ ⬇️ <br />oppure i tasti W A S D della
+            tastiera per spostare le celle.
+          </p>
+          <p>
+            Quando due celle con lo stesso numero si toccano, si fondono in una!
+          </p>
+          <p><b>Unisci le celle per arrivare a 2048 e vincere.</b></p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="copyright">© 2025 Gamezy - Tutti i diritti riservati</div>
+        <div class="footer-links">
+          <a href="../../support/footer/privacy.html" class="footer-link"
+            >Privacy</a
+          >
+          <a href="../../support/footer/terms.html" class="footer-link"
+            >Termini di servizio</a
+          >
+          <a href="../../support/footer/cookies.html" class="footer-link"
+            >Cookie</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

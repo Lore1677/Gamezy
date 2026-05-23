@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gamezy - Home</title>
+    <link rel="stylesheet" href="../index/css/main.css" />
+    <link rel="stylesheet" href="../index/css/homescreen.css" />
+
+    <script src="../index/js/theme.js" defer></script>
+    <script src="../index/js/carousel.js" defer></script>
+    <script src="../account/sessionmanager.js"></script>
+  </head>
+  <body>
+    <header class="top-nav">
+      <a href="home.html" class="nav-logo" id="logo">
+        <img src="../images/icons/logowhite.png" alt="Logo Gamezy" />
+        <span class="site-name">Gamezy</span>
+      </a>
+      <nav class="nav-links">
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">Supporto</div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../support/feedback.html" class="dropdown-item">
+                <img
+                  src="../images/icons/feedback-icon.png"
+                  alt="Feedback Icon"
+                  class="nav-icon"
+                />Feedback
+              </a>
+            </li>
+            <li>
+              <a href="../support/help.html" class="dropdown-item">
+                <img
+                  src="../images/icons/help-icon.png"
+                  alt="Help Icon"
+                  class="nav-icon"
+                />Aiuto
+              </a>
+            </li>
+            <li>
+              <a href="../support/contacts.html" class="dropdown-item">
+                <img
+                  src="../images/icons/contacts-icon.png"
+                  alt="Contacts Icon"
+                  class="nav-icon"
+                />Chi siamo?
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">
+            <a
+              href="../games/gamepage.html"
+              class="link-games"
+              id="nav-link-games"
+              >Giochi</a
+            >
+          </div>
+          <ul class="dropdown-menu">
+            <!-- Menu dropdown ordinato alfabeticamente -->
+            <li>
+              <a href="../games/2048/2048.html" class="dropdown-item">
+                <img
+                  src="../images/icons/2048-icon.png"
+                  alt="2048 Icon"
+                  class="nav-icon"
+                />
+                2048
+              </a>
+            </li>
+            <li>
+              <a
+                href="../games/banana-click/banana-click.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../images/icons/banana-click-icon.png"
+                  alt="Banana Click Icon"
+                  class="nav-icon"
+                />
+                Banana Click
+              </a>
+            </li>
+            <li>
+              <a
+                href="../games/campo-minato/campo-minato.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../images/icons/campo-minato-icon.png"
+                  alt="Campo Minato Icon"
+                  class="nav-icon"
+                />
+                Campo Minato
+              </a>
+            </li>
+            <li>
+              <a
+                href="../games/flappy-bird/flappy-bird.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../images/icons/flappy-bird-icon.png"
+                  alt="Flappy Bird Icon"
+                  class="nav-icon"
+                />
+                Flappy Bird
+              </a>
+            </li>
+            <li>
+              <a href="../games/forza4/forza4.html" class="dropdown-item">
+                <img
+                  src="../images/icons/forza4-icon.png"
+                  alt="Forza 4 Icon"
+                  class="nav-icon"
+                />
+                Forza 4
+              </a>
+            </li>
+            <li>
+              <a href="../games/pong/pong.html" class="dropdown-item">
+                <img
+                  src="../images/icons/pong-icon.png"
+                  alt="Pong Icon"
+                  class="nav-icon"
+                />
+                Pong
+              </a>
+            </li>
+            <li>
+              <a href="../games/sassocartaforbici/sassocartaforbici.html" class="dropdown-item">
+                <img
+                  src="../images/icons/sassocartaforbici-icon.png"
+                  alt="Sasso Carta Forbici Icon"
+                  class="nav-icon"
+                />
+                Sasso Carta Forbici
+              </a>
+            </li>
+            <li>
+              <a href="../games/sudoku/sudoku.html" class="dropdown-item">
+                <img
+                  src="../images/icons/sudoku-icon.png"
+                  alt="Sudoku Icon"
+                  class="nav-icon"
+                />
+                Sudoku
+              </a>
+            </li>
+            <li>
+              <a href="../games/tetris/tetris.html" class="dropdown-item">
+                <img
+                  src="../images/icons/tetris-icon.png"
+                  alt="Tetris Icon"
+                  class="nav-icon"
+                />
+                Tetris
+              </a>
+            </li>
+            <li>
+              <a href="../games/tris/tris.html" class="dropdown-item">
+                <img
+                  src="../images/icons/tris-icon.png"
+                  alt="Tris Icon"
+                  class="nav-icon"
+                />
+                Tris
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="../account/login.html" class="nav-link login-btn">Login</a>
+      </nav>
+    </header>
+
+    <main class="home-content">
+      <!-- Carousel principale -->
+      <div class="carousel-container">
+        <div class="carousel-slides">
+          <!-- Slides in ordine alfabetico -->
+          
+          <!-- Slide 1: 2048 -->
+          <div class="carousel-slide active">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/2048.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>2048</h2>
+              <p>
+                Unisci i numeri per raggiungere la tessera 2048! Un gioco di
+                strategia matematica che stimola la mente e crea dipendenza.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/2048/2048.html" class="play-btn">▶</a>
+            </div>
+          </div>
+
+          <!-- Slide 2: Banana Click -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/banana-click.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Banana Click</h2>
+              <p>
+                Clicca sulle banane per ottenere punti e sbloccare
+                potenziamenti! Un gioco idle divertente e rilassante.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/banana-click/banana-click.html" class="play-btn"
+                >▶</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 3: Campo Minato -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/campo-minato.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Campo Minato</h2>
+              <p>
+                Scopri le caselle vuote senza far esplodere le mine! Un gioco di
+                logica e fortuna che ti terrà col fiato sospeso.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/campo-minato/campo-minato.html" class="play-btn"
+                >▶</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 4: Flappy Bird -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/flappy-bird.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Flappy Bird</h2>
+              <p>
+                Fai volare l'uccellino attraverso i tubi! Un classico arcade che
+                metterà alla prova i tuoi riflessi e la tua pazienza.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/flappy-bird/flappy-bird.html" class="play-btn"
+                >▶</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 5: Forza 4 -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/forza4.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Forza 4</h2>
+              <p>
+                Allinea quattro gettoni dello stesso colore in orizzontale,
+                verticale o diagonale! Un gioco di strategia per due giocatori.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/forza4/forza4.html" class="play-btn">▶</a>
+            </div>
+          </div>
+
+          <!-- Slide 6: Pong -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/pong.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Pong</h2>
+              <p>
+                Il primo videogioco sportivo della storia! Sfida un amico o il
+                computer in questo classico gioco di tennis da tavolo virtuale.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/pong/pong.html" class="play-btn">▶</a>
+            </div>
+          </div>
+
+          <!-- Slide 7: Sasso Carta Forbici -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/sassocartaforbici.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Sasso Carta Forbici</h2>
+              <p>
+                Il classico gioco di mano contro il computer! Scegli tra sasso, carta e
+                forbici e sfida l'intelligenza artificiale in questo semplice ma avvincente gioco.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/sassocartaforbici/sassocartaforbici.html" class="play-btn"
+                >▶</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 8: Sudoku -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/sudoku.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Sudoku</h2>
+              <p>
+                Riempi la griglia 9x9 con numeri da 1 a 9 senza ripetizioni! Un puzzle
+                di logica che metterà alla prova le tue capacità di ragionamento.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/sudoku/sudoku.html" class="play-btn"
+                >▶</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 9: Tetris -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/tetris.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Tetris</h2>
+              <p>
+                Organizza i tetramini in caduta per creare linee complete. Un
+                puzzle game intramontabile che ha conquistato generazioni di
+                giocatori.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/tetris/tetris.html" class="play-btn">▶</a>
+            </div>
+          </div>
+
+          <!-- Slide 10: Tris -->
+          <div class="carousel-slide">
+            <div
+              class="carousel-image"
+              style="background-image: url('../images/games/tris.gif')"
+            ></div>
+            <div class="carousel-content">
+              <h2>Tris</h2>
+              <p>
+                Allinea tre simboli in orizzontale, verticale o diagonale prima
+                del tuo avversario! Un gioco semplice ma strategico.
+              </p>
+              <a href="../games/gamepage.html" class="discover-btn"
+                >Scopri di più</a
+              >
+              <a href="../games/tris/tris.html" class="play-btn">▶</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicatori di posizione -->
+        <div class="carousel-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+          <span class="indicator" data-slide="3"></span>
+          <span class="indicator" data-slide="4"></span>
+          <span class="indicator" data-slide="5"></span>
+          <span class="indicator" data-slide="6"></span>
+          <span class="indicator" data-slide="7"></span>
+          <span class="indicator" data-slide="8"></span>
+          <span class="indicator" data-slide="9"></span>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const content = document.querySelector(".home-content");
+
+        // Animazione fade-in quando la pagina principale viene caricata
+        setTimeout(function () {
+          content.classList.add("visible");
+        }, 100);
+      });
+    </script>
+  </body>
+</html>

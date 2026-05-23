@@ -1,0 +1,306 @@
+/* Variabili per colori e dimensioni */
+:root {
+  /* Colori primari - tema scuro predefinito */
+  --text-color: #ffffff;
+  --button-text-color: #ffffff;
+
+  --grid-bg: #222222;
+  --cell-bg: #333333;
+  --cell-revealed-bg: #424242;
+
+  /* Colori gradiente */
+  --gradient-start: #4cacaf;
+  --gradient-end: #458ea0;
+
+  /* Colori numeri - tema scuro */
+  --num-1: #19b5fe; /* Blu chiaro */
+  --num-2: #26a65b; /* Verde */
+  --num-3: #e74c3c; /* Rosso */
+  --num-4: #9b59b6; /* Viola */
+  --num-5: #f1c40f; /* Giallo */
+  --num-6: #16a085; /* Turchese */
+  --num-7: #f39c12; /* Arancione */
+  --num-8: #ecf0f1; /* Bianco */
+  --flag-color: #e74c3c; /* Rosso per bandiere */
+  --mine-color: #f65e3b; /* Colore per mine */
+
+  /* Dimensioni */
+  --grid-spacing: 4px;
+  --cell-size: 40px;
+
+  /* Effetti */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --box-shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Sostituzione tema chiaro */
+body.light-theme {
+  --bg-color: #f2f2f2;
+  --text-color: #333333;
+
+  --grid-bg: rgba(200, 200, 200, 0.7);
+  --cell-bg: #e0e0e0;
+  --cell-revealed-bg: #c0c0c0;
+
+  /* Colori gradiente */
+  --gradient-start: #8e3b9c;
+  --gradient-end: #9c27b0;
+
+  /* Colori numeri */
+  --num-1: #2574a9; /* Blu */
+  --num-2: #26a65b; /* Verde */
+  --num-3: #e74c3c; /* Rosso */
+  --num-4: #9b59b6; /* Viola */
+  --num-5: #f1c40f; /* Giallo */
+  --num-6: #16a085; /* Turchese */
+  --num-7: #f39c12; /* Arancione */
+  --num-8: #333333; /* Nero */
+}
+
+/* Struttura layout */
+.game-container {
+  max-width: 100%;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 20px auto;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+  width: 100%;
+}
+
+.difficulty-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#difficulty {
+  padding: 8px;
+  border-radius: 5px;
+  background-color: var(--cell-bg);
+  color: var(--text-color);
+  border: none;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+}
+
+#new-game-btn {
+  padding: 8px 16px;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#new-game-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.game-info {
+  display: flex;
+  gap: 20px;
+}
+
+.mines-counter,
+.timer {
+  background: linear-gradient(135deg, var(--cell-bg), var(--grid-bg));
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease, background 0.3s ease;
+  color: var(--text-color);
+}
+
+/* Layout griglia */
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 9), var(--cell-size));
+  grid-template-rows: repeat(var(--rows, 9), var(--cell-size));
+  gap: var(--grid-spacing);
+  background-color: var(--grid-bg);
+  padding: var(--grid-spacing);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: var(--cell-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+  font-size: calc(var(--cell-size) * 0.45);
+  user-select: none;
+  box-shadow: var(--box-shadow);
+}
+
+.cell:hover:not(.revealed):not(.flagged) {
+  transform: scale(0.95);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.cell.revealed {
+  background-color: var(--cell-revealed-bg);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Stili numeri celle */
+.cell.revealed.value-1 {
+  color: var(--num-1);
+}
+.cell.revealed.value-2 {
+  color: var(--num-2);
+}
+.cell.revealed.value-3 {
+  color: var(--num-3);
+}
+.cell.revealed.value-4 {
+  color: var(--num-4);
+}
+.cell.revealed.value-5 {
+  color: var(--num-5);
+}
+.cell.revealed.value-6 {
+  color: var(--num-6);
+}
+.cell.revealed.value-7 {
+  color: var(--num-7);
+}
+.cell.revealed.value-8 {
+  color: var(--num-8);
+}
+
+.cell.flagged::before {
+  content: "🚩";
+  font-size: calc(var(--cell-size) * 0.5);
+}
+
+.cell.mine {
+  background-color: var(--mine-color);
+}
+
+.cell.mine::before {
+  content: "💣";
+  font-size: calc(var(--cell-size) * 0.6);
+}
+
+.cell.exploded {
+  background-color: #ff0000;
+}
+
+.cell.exploded::before {
+  content: "💥";
+  font-size: calc(var(--cell-size) * 0.6);
+}
+
+/* Overlay game over */
+.game-over-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 15, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.game-over-message {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 0 20px;
+  animation: pulse 2s infinite;
+}
+
+.game-over-subtitle {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.game-over-button {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.game-over-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Animazione */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

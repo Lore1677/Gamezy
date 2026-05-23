@@ -1,0 +1,154 @@
+/* ============================
+    Contacts Section Styles
+============================ */
+:root {
+  /* Colori */
+  --primary-color: #4cacaf;
+  --primary-hover: #458ea0;
+  --light-primary: #8e3b9c;
+  --light-primary-hover: #9c27b0;
+  --text-dark: #b0b8c0;
+  --text-light: #333333;
+  --text-secondary-dark: #8a9199;
+  --text-secondary-light: #555555;
+  --bg-dark-gradient: linear-gradient(135deg, #22232a, #1a1a1f);
+  --bg-light-gradient: linear-gradient(135deg, #ffffff, #f2f2f2);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-primary-dark: rgba(105, 240, 245, 0.5);
+  --shadow-primary-light: rgba(138, 43, 226, 0.5);
+  --border-dark: #444;
+  --border-light: #ddd;
+
+  /* Spazi */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 25px;
+  --spacing-xxl: 30px;
+
+  /* Ratio bordi */
+  --border-radius-sm: 8px;
+  --border-radius-md: 15px;
+  --border-radius-circle: 50%;
+}
+
+.container {
+  padding: var(--spacing-xxl);
+  line-height: 1.8;
+}
+
+.container h1 {
+  font-size: 50px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.profiles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+/* Box del profilo*/
+.profile-box {
+  background: var(--bg-dark-gradient);
+  padding: var(--spacing-xxl);
+  border-radius: var(--border-radius-md);
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+}
+
+.profile-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px var(--shadow-primary-dark);
+}
+
+.profile-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--border-radius-circle);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 7px rgba(76, 172, 175, 0.5);
+}
+
+.profile-box h3 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: -5px;
+  font-size: 22px;
+  color: white;
+}
+
+.profile-box p {
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.profile-box a {
+  display: inline-block;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  font-weight: bold;
+  font-style: italic;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-box a:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+.color-change {
+  color: var(--primary-hover);
+  font-weight: bold;
+}
+
+/* ============================
+    Override per il tema chiaro
+============================ */
+body.light-theme .profile-box a {
+  background-color: var(--light-primary);
+  color: white;
+}
+
+body.light-theme .profile-box a:hover {
+  background-color: var(--light-primary-hover);
+  transform: scale(1.05);
+}
+
+body.light-theme .profile-box img {
+  border: 2px solid #8a2be2;
+  box-shadow: 0 0 7px rgba(138, 43, 226, 0.5);
+}
+
+body.light-theme .profile-box {
+  background: var(--bg-light-gradient);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+body.light-theme .profile-box h3 {
+  color: var(--text-light);
+}
+
+body.light-theme .profile-box p {
+  color: var(--text-secondary-light);
+}
+
+body.light-theme .profile-box:hover {
+  box-shadow: 0 10px 25px var(--shadow-primary-light);
+}
+
+body.light-theme .color-change {
+  color: var(--light-primary);
+  font-weight: bold;
+}

@@ -1,0 +1,79 @@
+:root {
+  --body-bg: #1a1a1f;
+  --body-text: #b0b8c0;
+  --title: rgba(76, 172, 175, 0.85);
+
+  --toggle-bg: rgba(168, 175, 76, 0.2);
+  --toggle-color: #ecea6c;
+  --toggle-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --toggle-bg-hover: rgba(225, 238, 111, 0.3);
+}
+
+/* Override per il tema chiaro */
+body.light-theme {
+  --body-bg: #f2f2f2;
+  --body-text: #333333;
+  --title: rgba(142, 59, 156, 0.85);
+
+  --toggle-bg: rgba(138, 43, 226, 0.2);
+  --toggle-color: #8e3b9c;
+  --toggle-box-shadow: 0 2px 4px rgba(138, 43, 226, 0.2);
+  --toggle-bg-hover: rgba(138, 43, 226, 0.3);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--body-text);
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background-color: var(--toggle-bg);
+  color: var(--toggle-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  box-shadow: var(--toggle-box-shadow);
+}
+
+.theme-toggle:hover {
+  transform: rotate(30deg) scale(1.1);
+  background-color: var(--toggle-bg-hover);
+}
+
+body.light-theme .theme-toggle:hover {
+  transform: rotate(-30deg) scale(1.1);
+}
+
+.note {
+  font-family: "Times New Roman", Times, cursive;
+  color: rgba(128, 128, 128, 0.5);
+  font-style: italic;
+}
+
+.game-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 40px;
+  margin: 30px auto;
+  color: var(--title);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.title-icon {
+  position: relative;
+  margin-top: -10px;
+  padding-left: 30px;
+  width: 60px;
+  vertical-align: middle;
+}

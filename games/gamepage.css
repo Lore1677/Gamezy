@@ -1,0 +1,204 @@
+/* Stili per la pagina dei giochi */
+:root {
+  /* Variabili di colore - allineate con il tema della navigazione */
+  --card-bg: rgba(34, 35, 42, 0.85);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+  --card-hover-transform: translateY(-5px);
+  --card-border: rgba(255, 255, 255, 0.1);
+
+  --button-bg: rgba(76, 172, 175, 0.85);
+  --button-hover-bg: rgba(69, 142, 160, 0.9);
+  --button-color: white;
+  --button-box-shadow: 0 2px 8px rgba(76, 172, 175, 0.3);
+  --button-border: rgba(255, 255, 255, 0.1);
+
+  --filter-bg: rgba(34, 35, 42, 0.7);
+  --filter-hover-bg: rgba(255, 255, 255, 0.1);
+  --filter-active-bg: var(--button-bg);
+  --filter-color: #b0b8c0;
+  --filter-active-color: white;
+  --filter-border: rgba(255, 255, 255, 0.05);
+
+  --body-text: #b0b8c0;
+  --body-text-hover: #ffffff;
+
+  --border-radius: 12px;
+  --border-radius-pill: 20px;
+
+  --spacing-xs: 6px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-xxl: 40px;
+}
+
+/* Override per il tema chiaro */
+body.light-theme {
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.15);
+  --card-hover-shadow: 0 5px 15px rgba(0, 0, 0, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.2);
+  --card-border: rgba(255, 255, 255, 0.3);
+
+  --button-bg: rgba(142, 59, 156, 0.85);
+  --button-hover-bg: rgba(156, 39, 176, 0.9);
+  --button-color: white;
+  --button-box-shadow: 0 2px 8px rgba(138, 43, 226, 0.3);
+  --button-border: rgba(255, 255, 255, 0.2);
+
+  --filter-bg: rgba(255, 255, 255, 0.6);
+  --filter-hover-bg: rgba(0, 0, 0, 0.1);
+  --filter-active-bg: var(--button-bg);
+  --filter-color: #333333;
+  --filter-active-color: white;
+  --filter-border: rgba(255, 255, 255, 0.25);
+
+  --body-text: #333333;
+  --body-text-hover: #000000;
+}
+
+main {
+  padding: var(--spacing-xl) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.games-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.games-description {
+  font-size: 1rem;
+  color: var(--body-text);
+  max-width: 700px;
+  margin: 0 auto;
+  transition: color 0.3s ease;
+}
+
+/* Modificato il grid per avere un layout orizzontale con 3 giochi per riga */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
+}
+
+.game-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.game-card:hover {
+  transform: var(--card-hover-transform);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.game-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.game-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: var(--spacing-sm);
+  border-radius: 10%;
+}
+
+.game-info {
+  padding: var(--spacing-md);
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.game-name {
+  font-size: 1.2rem;
+  color: var(--body-text);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.game-description {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-category {
+  font-size: 0.8rem;
+  color: var(--body-text);
+  opacity: 0.7;
+  transition: color 0.3s ease;
+}
+
+.game-link {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--button-box-shadow);
+  border: 1px solid var(--button-border);
+  backdrop-filter: blur(8px);
+}
+
+.game-link:hover {
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05);
+}
+
+/* Filtri categoria */
+.category-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.category-filter {
+  padding: var(--spacing-xs) 14px;
+  border-radius: var(--border-radius-pill);
+  cursor: pointer;
+  background-color: var(--filter-bg);
+  color: var(--filter-color);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--filter-border);
+}
+
+.category-filter:hover {
+  background-color: var(--filter-hover-bg);
+  color: var(--body-text-hover);
+}
+
+.category-filter.active {
+  background-color: var(--filter-active-bg);
+  color: var(--filter-active-color);
+}

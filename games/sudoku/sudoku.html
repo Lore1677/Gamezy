@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sudoku | Gamezy</title>
+    <link rel="stylesheet" href="sudoku.css" />
+    <script src="sudoku.js" defer></script>
+
+    <link rel="stylesheet" href="../../index/css/main.css" />
+    <script src="../../index/js/theme.js" defer></script>
+    <script src="../../account/sessionmanager.js"></script>
+  </head>
+  <body>
+    <header class="top-nav">
+      <a href="../../index/home.html" class="nav-logo" id="logo">
+        <img src="../../images/icons/logowhite.png" alt="Logo Gamezy" />
+        <span class="site-name">Gamezy</span>
+      </a>
+      <nav class="nav-links">
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">Supporto</div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../../support/feedback.html" class="dropdown-item"
+                ><img
+                  src="../../images/icons/feedback-icon.png"
+                  alt="Feedback Icon"
+                  class="nav-icon"
+                />Feedback</a
+              >
+            </li>
+            <li>
+              <a href="../../support/help.html" class="dropdown-item"
+                ><img
+                  src="../../images/icons/help-icon.png"
+                  alt="Help Icon"
+                  class="nav-icon"
+                />Aiuto</a
+              >
+            </li>
+            <li>
+              <a href="../../support/contacts.html" class="dropdown-item"
+                ><img
+                  src="../../images/icons/contacts-icon.png"
+                  alt="Contacts Icon"
+                  class="nav-icon"
+                />Chi siamo?</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">
+            <a
+              href="../../games/gamepage.html"
+              class="link-games"
+              id="nav-link-games"
+              >Giochi</a
+            >
+          </div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../../games/2048/2048.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/2048-icon.png"
+                  alt="2048 Icon"
+                  class="nav-icon"
+                />
+                2048
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/banana-click/banana-click.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/banana-click-icon.png"
+                  alt="Banana Click Icon"
+                  class="nav-icon"
+                />
+                Banana click
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/campo-minato/campo-minato.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/campo-minato-icon.png"
+                  alt="Campo Minato Icon"
+                  class="nav-icon"
+                />
+                Campo minato
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/flappy-bird/flappy-bird.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/flappy-bird-icon.png"
+                  alt="Flappy Bird Icon"
+                  class="nav-icon"
+                />
+                Flappy bird
+              </a>
+            </li>
+            <li>
+              <a href="../../games/forza4/forza4.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/forza4-icon.png"
+                  alt="Forza 4 Icon"
+                  class="nav-icon"
+                />
+                Forza 4
+              </a>
+            </li>
+            <li>
+              <a href="../../games/pong/pong.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/pong-icon.png"
+                  alt="Pong Icon"
+                  class="nav-icon"
+                />
+                Pong
+              </a>
+            </li>
+            <li>
+              <a href="../../games/sassocartaforbici/sassocartaforbici.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/sassocartaforbici-icon.png"
+                  alt="Sasso Carta Forbici Icon"
+                  class="nav-icon"
+                />
+                Sasso Carta Forbici
+              </a>
+            </li>
+            <li>
+              <a href="../../games/sudoku/sudoku.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/sudoku-icon.png"
+                  alt="Sudoku Icon"
+                  class="nav-icon"
+                />
+                Sudoku
+              </a>
+            </li>
+            <li>
+              <a href="../../games/tetris/tetris.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/tetris-icon.png"
+                  alt="Tetris Icon"
+                  class="nav-icon"
+                />
+                Tetris
+              </a>
+            </li>
+            <li>
+              <a href="../../games/tris/tris.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/tris-icon.png"
+                  alt="Tris Icon"
+                  class="nav-icon"
+                />
+                Tris
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="../../account/login.html" class="nav-link login-btn">Login</a>
+      </nav>
+    </header>
+
+    <div>
+      <h1 class="game-title">
+        Sudoku<img
+          src="../../images/icons/sudoku-icon.png"
+          alt="Sudoku Icon"
+          class="title-icon"
+        />
+      </h1>
+    </div>
+
+    <div class="game-container">
+      <div class="game-controls">
+        <div class="difficulty-selector">
+          <label for="difficulty">Difficoltà:</label>
+          <select id="difficulty">
+            <option value="easy" selected>Facile</option>
+            <option value="medium">Medio</option>
+            <option value="hard">Difficile</option>
+          </select>
+        </div>
+        <button id="new-game-btn">Nuova Partita</button>
+        <div class="game-info">
+          <div class="timer">Tempo: <span id="timer">0</span> s</div>
+          <div class="errors">Errori: <span id="errors-count">0</span>/3</div>
+        </div>
+      </div>
+      
+      <div class="gameboard-container">
+        <div id="sudoku-board"></div>
+      </div>
+      
+      <div class="number-pad">
+        <button class="number-btn" data-number="1">1</button>
+        <button class="number-btn" data-number="2">2</button>
+        <button class="number-btn" data-number="3">3</button>
+        <button class="number-btn" data-number="4">4</button>
+        <button class="number-btn" data-number="5">5</button>
+        <button class="number-btn" data-number="6">6</button>
+        <button class="number-btn" data-number="7">7</button>
+        <button class="number-btn" data-number="8">8</button>
+        <button class="number-btn" data-number="9">9</button>
+        <button class="number-btn erase-btn" data-number="0">✖</button>
+        <button class="number-btn notes-btn" id="notes-toggle">Note</button>
+        <button class="number-btn hint-btn" id="hint-btn">Aiuto</button>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="copyright">© 2025 Gamezy - Tutti i diritti riservati</div>
+        <div class="footer-links">
+          <a href="../../support/footer/privacy.html" class="footer-link"
+            >Privacy</a
+          >
+          <a href="../../support/footer/terms.html" class="footer-link"
+            >Termini di servizio</a
+          >
+          <a href="../../support/footer/cookies.html" class="footer-link"
+            >Cookie</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

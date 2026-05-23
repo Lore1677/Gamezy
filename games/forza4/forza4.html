@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forza 4 | Gamezy</title>
+    <link rel="stylesheet" href="forza4.css" />
+    <script src="forza4.js" defer></script>
+
+    <link rel="stylesheet" href="../../index/css/main.css" />
+    <script src="../../index/js/theme.js" defer></script>
+    <script src="../../account/sessionmanager.js"></script>
+  </head>
+  <body>
+    <header class="top-nav">
+      <a href="../../index/home.html" class="nav-logo" id="logo">
+        <img src="../../images/icons/logowhite.png" alt="Logo Gamezy" />
+        <span class="site-name">Gamezy</span>
+      </a>
+      <nav class="nav-links">
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">Supporto</div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../../support/feedback.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/feedback-icon.png"
+                  alt="Feedback Icon"
+                  class="nav-icon"
+                />Feedback
+              </a>
+            </li>
+            <li>
+              <a href="../../support/help.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/help-icon.png"
+                  alt="Help Icon"
+                  class="nav-icon"
+                />Aiuto
+              </a>
+            </li>
+            <li>
+              <a href="../../support/contacts.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/contacts-icon.png"
+                  alt="Contacts Icon"
+                  class="nav-icon"
+                />Chi siamo?
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">
+            <a
+              href="../../games/gamepage.html"
+              class="link-games"
+              id="nav-link-games"
+              >Giochi</a
+            >
+          </div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../../games/2048/2048.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/2048-icon.png"
+                  alt="2048 Icon"
+                  class="nav-icon"
+                />
+                2048
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/banana-click/banana-click.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/banana-click-icon.png"
+                  alt="Banana Click Icon"
+                  class="nav-icon"
+                />
+                Banana click
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/campo-minato/campo-minato.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/campo-minato-icon.png"
+                  alt="Campo Minato Icon"
+                  class="nav-icon"
+                />
+                Campo minato
+              </a>
+            </li>
+            <li>
+              <a
+                href="../../games/flappy-bird/flappy-bird.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../../images/icons/flappy-bird-icon.png"
+                  alt="Flappy Bird Icon"
+                  class="nav-icon"
+                />
+                Flappy bird
+              </a>
+            </li>
+            <li>
+              <a href="../../games/forza4/forza4.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/forza4-icon.png"
+                  alt="Forza 4 Icon"
+                  class="nav-icon"
+                />
+                Forza 4
+              </a>
+            </li>
+            <li>
+              <a href="../../games/pong/pong.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/pong-icon.png"
+                  alt="Pong Icon"
+                  class="nav-icon"
+                />
+                Pong
+              </a>
+            </li>
+            <li>
+              <a href="../../games/sassocartaforbici/sassocartaforbici.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/sassocartaforbici-icon.png"
+                  alt="Sasso Carta Forbici Icon"
+                  class="nav-icon"
+                />
+                Sasso Carta Forbici
+              </a>
+            </li>
+            <li>
+              <a href="../../games/sudoku/sudoku.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/sudoku-icon.png"
+                  alt="Sudoku Icon"
+                  class="nav-icon"
+                />
+                Sudoku
+              </a>
+            </li>
+            <li>
+              <a href="../../games/tetris/tetris.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/tetris-icon.png"
+                  alt="Tetris Icon"
+                  class="nav-icon"
+                />
+                Tetris
+              </a>
+            </li>
+            <li>
+              <a href="../../games/tris/tris.html" class="dropdown-item">
+                <img
+                  src="../../images/icons/tris-icon.png"
+                  alt="Tris Icon"
+                  class="nav-icon"
+                />
+                Tris
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="../../account/login.html" class="nav-link login-btn">Login</a>
+      </nav>
+    </header>
+
+    <h1 class="game-title">
+      Forza 4
+      <img
+        src="../../images/icons/forza4-icon.png"
+        alt="Forza 4 Icon"
+        class="title-icon"
+      />
+    </h1>
+
+    <div class="game-header">
+      <div class="current-player-status">
+        <div class="turn-indicator">
+          Turno di:
+          <span id="current-turn" class="score-value red-disc">🔴</span>
+        </div>
+      </div>
+    </div>
+
+    <main class="game-container">
+      <div class="grid-wrapper">
+        <div class="grid-container" id="grid">
+          <div class="column-buttons">
+            <button class="column-button" data-column="0">⬇</button>
+            <button class="column-button" data-column="1">⬇</button>
+            <button class="column-button" data-column="2">⬇</button>
+            <button class="column-button" data-column="3">⬇</button>
+            <button class="column-button" data-column="4">⬇</button>
+            <button class="column-button" data-column="5">⬇</button>
+            <button class="column-button" data-column="6">⬇</button>
+          </div>
+          <div class="grid-board">
+            <!-- Riga 0 (in alto) -->
+            <div class="grid-cell" data-row="0" data-column="0"></div>
+            <div class="grid-cell" data-row="0" data-column="1"></div>
+            <div class="grid-cell" data-row="0" data-column="2"></div>
+            <div class="grid-cell" data-row="0" data-column="3"></div>
+            <div class="grid-cell" data-row="0" data-column="4"></div>
+            <div class="grid-cell" data-row="0" data-column="5"></div>
+            <div class="grid-cell" data-row="0" data-column="6"></div>
+
+            <!-- Riga 1 -->
+            <div class="grid-cell" data-row="1" data-column="0"></div>
+            <div class="grid-cell" data-row="1" data-column="1"></div>
+            <div class="grid-cell" data-row="1" data-column="2"></div>
+            <div class="grid-cell" data-row="1" data-column="3"></div>
+            <div class="grid-cell" data-row="1" data-column="4"></div>
+            <div class="grid-cell" data-row="1" data-column="5"></div>
+            <div class="grid-cell" data-row="1" data-column="6"></div>
+
+            <!-- Riga 2 -->
+            <div class="grid-cell" data-row="2" data-column="0"></div>
+            <div class="grid-cell" data-row="2" data-column="1"></div>
+            <div class="grid-cell" data-row="2" data-column="2"></div>
+            <div class="grid-cell" data-row="2" data-column="3"></div>
+            <div class="grid-cell" data-row="2" data-column="4"></div>
+            <div class="grid-cell" data-row="2" data-column="5"></div>
+            <div class="grid-cell" data-row="2" data-column="6"></div>
+
+            <!-- Riga 3 -->
+            <div class="grid-cell" data-row="3" data-column="0"></div>
+            <div class="grid-cell" data-row="3" data-column="1"></div>
+            <div class="grid-cell" data-row="3" data-column="2"></div>
+            <div class="grid-cell" data-row="3" data-column="3"></div>
+            <div class="grid-cell" data-row="3" data-column="4"></div>
+            <div class="grid-cell" data-row="3" data-column="5"></div>
+            <div class="grid-cell" data-row="3" data-column="6"></div>
+
+            <!-- Riga 4 -->
+            <div class="grid-cell" data-row="4" data-column="0"></div>
+            <div class="grid-cell" data-row="4" data-column="1"></div>
+            <div class="grid-cell" data-row="4" data-column="2"></div>
+            <div class="grid-cell" data-row="4" data-column="3"></div>
+            <div class="grid-cell" data-row="4" data-column="4"></div>
+            <div class="grid-cell" data-row="4" data-column="5"></div>
+            <div class="grid-cell" data-row="4" data-column="6"></div>
+
+            <!-- Riga 5 (in basso) -->
+            <div class="grid-cell" data-row="5" data-column="0"></div>
+            <div class="grid-cell" data-row="5" data-column="1"></div>
+            <div class="grid-cell" data-row="5" data-column="2"></div>
+            <div class="grid-cell" data-row="5" data-column="3"></div>
+            <div class="grid-cell" data-row="5" data-column="4"></div>
+            <div class="grid-cell" data-row="5" data-column="5"></div>
+            <div class="grid-cell" data-row="5" data-column="6"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="player-info-section">
+          <h2>Statistiche</h2>
+          <div class="score-container">
+            <div class="score-box red-player-box">
+              <div class="player-symbol red-disc">🔴</div>
+              <div class="score-details">
+                <div class="score-label">VITTORIE</div>
+                <div class="score-value" id="red-wins">0</div>
+              </div>
+            </div>
+            <div class="score-box yellow-player-box">
+              <div class="player-symbol yellow-disc">🟡</div>
+              <div class="score-details">
+                <div class="score-label">VITTORIE</div>
+                <div class="score-value" id="yellow-wins">0</div>
+              </div>
+            </div>
+            <div class="score-box tie-box">
+              <div class="score-label">PAREGGI</div>
+              <div class="score-value" id="ties">0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="reset-button" class="primary-button">
+            Nuova Partita
+          </button>
+          <button id="reset-stats" class="secondary-button">
+            Azzera Statistiche
+          </button>
+        </div>
+
+        <div class="instructions">
+          <h3>Come giocare:</h3>
+          <ul>
+            <li>
+              Clicca su una delle frecce in alto per far cadere un disco nella
+              colonna selezionata
+            </li>
+            <li>
+              Il primo giocatore a posizionare quattro dischi in fila vince!
+            </li>
+            <li>La fila può essere orizzontale, verticale o diagonale</li>
+            <li>Rosso inizia sempre per primo</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <div id="game-result-overlay" style="display: none">
+      <h2 id="result-message">Vincitore!</h2>
+      <button id="play-again-button">Gioca ancora</button>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="copyright">© 2025 Gamezy - Tutti i diritti riservati</div>
+        <div class="footer-links">
+          <a href="../../support/footer/privacy.html" class="footer-link"
+            >Privacy</a
+          >
+          <a href="../../support/footer/terms.html" class="footer-link"
+            >Termini di servizio</a
+          >
+          <a href="../../support/footer/cookies.html" class="footer-link"
+            >Cookie</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

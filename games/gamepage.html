@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Esplora i Minigiochi - Gamezy</title>
+    <link rel="stylesheet" href="gamepage.css" />
+
+    <link rel="stylesheet" href="../index/css/main.css" />
+    <script src="../index/js/theme.js" defer></script>
+    <script src="../account/sessionmanager.js"></script>
+  </head>
+  <body>
+    <header class="top-nav">
+      <a href="../index/home.html" class="nav-logo" id="logo">
+        <img src="../images/icons/logowhite.png" alt="Logo Gamezy" />
+        <span class="site-name">Gamezy</span>
+      </a>
+      <nav class="nav-links">
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">Supporto</div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../support/feedback.html" class="dropdown-item"
+                ><img
+                  src="../images/icons/feedback-icon.png"
+                  alt="Feedback Icon"
+                  class="nav-icon"
+                />Feedback</a
+              >
+            </li>
+            <li>
+              <a href="../support/help.html" class="dropdown-item"
+                ><img
+                  src="../images/icons/help-icon.png"
+                  alt="Help Icon"
+                  class="nav-icon"
+                />Aiuto</a
+              >
+            </li>
+            <li>
+              <a href="../support/contacts.html" class="dropdown-item"
+                ><img
+                  src="../images/icons/contacts-icon.png"
+                  alt="Contacts Icon"
+                  class="nav-icon"
+                />Chi siamo?</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <div class="nav-link">
+            <a
+              href="../games/gamepage.html"
+              class="link-games"
+              id="nav-link-games"
+              >Giochi</a
+            >
+          </div>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../games/2048/2048.html" class="dropdown-item">
+                <img
+                  src="../images/icons/2048-icon.png"
+                  alt="2048 Icon"
+                  class="nav-icon"
+                />
+                2048
+              </a>
+            </li>
+            <li>
+              <a
+                href="../games/banana-click/banana-click.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../images/icons/banana-click-icon.png"
+                  alt="Banana Click Icon"
+                  class="nav-icon"
+                />
+                Banana click
+              </a>
+            </li>
+            <li>
+              <a
+                href="../games/campo-minato/campo-minato.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../images/icons/campo-minato-icon.png"
+                  alt="Campo Minato Icon"
+                  class="nav-icon"
+                />
+                Campo minato
+              </a>
+            </li>
+            <li>
+              <a
+                href="../games/flappy-bird/flappy-bird.html"
+                class="dropdown-item"
+              >
+                <img
+                  src="../images/icons/flappy-bird-icon.png"
+                  alt="Flappy Bird Icon"
+                  class="nav-icon"
+                />
+                Flappy bird
+              </a>
+            </li>
+            <li>
+              <a href="../games/forza4/forza4.html" class="dropdown-item">
+                <img
+                  src="../images/icons/forza4-icon.png"
+                  alt="Forza 4 Icon"
+                  class="nav-icon"
+                />
+                Forza 4
+              </a>
+            </li>
+            <li>
+              <a href="../games/pong/pong.html" class="dropdown-item">
+                <img
+                  src="../images/icons/pong-icon.png"
+                  alt="Pong Icon"
+                  class="nav-icon"
+                />
+                Pong
+              </a>
+            </li>
+            <li>
+              <a href="../games/sudoku/sudoku.html" class="dropdown-item">
+                <img
+                  src="../images/icons/sudoku-icon.png"
+                  alt="Sudoku Icon"
+                  class="nav-icon"
+                />
+                Sudoku
+              </a>
+            </li>
+            <li>
+              <a href="../games/sassocartaforbici/sassocartaforbici.html" class="dropdown-item">
+                <img
+                  src="../images/icons/sassocartaforbici-icon.png"
+                  alt="Sasso Carta Forbici Icon"
+                  class="nav-icon"
+                />
+                Sasso Carta Forbici
+              </a>
+            </li>
+            <li>
+              <a href="../games/tetris/tetris.html" class="dropdown-item">
+                <img
+                  src="../images/icons/tetris-icon.png"
+                  alt="Tetris Icon"
+                  class="nav-icon"
+                />
+                Tetris
+              </a>
+            </li>
+            <li>
+              <a href="../games/tris/tris.html" class="dropdown-item">
+                <img
+                  src="../images/icons/tris-icon.png"
+                  alt="Tris Icon"
+                  class="nav-icon"
+                />
+                Tris
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="../account/login.html" class="nav-link login-btn">Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="games-header">
+        <h1 class="game-title">I nostri minigiochi</h1>
+        <p class="games-description">
+          Esplora la collezione di giochi classici e divertiti con Gamezy
+        </p>
+      </div>
+
+      <div class="category-filters">
+        <div class="category-filter active" data-category="all">Tutti 🎮</div>
+        <div class="category-filter" data-category="intelletto">
+          Intelletto 🧠
+        </div>
+        <div class="category-filter" data-category="arcade">Arcade 🕹️</div>
+        <div class="category-filter" data-category="casual">Casual 🎲</div>
+      </div>
+
+      <div class="games-grid">
+        <div class="game-card" data-category="intelletto">
+          <img src="../images/games/2048.gif" alt="2048" class="game-image" />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/2048-icon.png"
+                alt="2048 Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">2048</h3>
+            </div>
+            <p class="game-description">
+              Unisci i numeri e raggiungi la tessera 2048 in questo puzzle
+              matematico
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Intelletto 🧠</span>
+              <a href="../games/2048/2048.html" class="game-link">Gioca</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="casual">
+          <img
+            src="../images/games/banana-click.gif"
+            alt="Banana Click"
+            class="game-image"
+          />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/banana-click-icon.png"
+                alt="Banana Click Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Banana Click</h3>
+            </div>
+            <p class="game-description">
+              Clicca più velocemente possibile per guadagnare punti
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Casual 🎲</span>
+              <a
+                href="../games/banana-click/banana-click.html"
+                class="game-link"
+                >Gioca</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="intelletto">
+          <img
+            src="../images/games/campo-minato.gif"
+            alt="Campo Minato"
+            class="game-image"
+          />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/campo-minato-icon.png"
+                alt="Campo Minato Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Campo Minato</h3>
+            </div>
+            <p class="game-description">
+              Trova le mine nascoste usando logica e deduzione
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Intelletto 🧠</span>
+              <a
+                href="../games/campo-minato/campo-minato.html"
+                class="game-link"
+                >Gioca</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="arcade">
+          <img
+            src="../images/games/flappy-bird.gif"
+            alt="Flappy Bird"
+            class="game-image"
+          />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/flappy-bird-icon.png"
+                alt="Flappy Bird Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Flappy Bird</h3>
+            </div>
+            <p class="game-description">
+              Guida l'uccellino attraverso i tubi senza toccarli
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Arcade 🕹️</span>
+              <a href="../games/flappy-bird/flappy-bird.html" class="game-link"
+                >Gioca</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="casual">
+          <img
+            src="../images/games/forza4.gif"
+            alt="Forza 4"
+            class="game-image"
+          />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/forza4-icon.png"
+                alt="Forza 4 Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Forza 4</h3>
+            </div>
+            <p class="game-description">
+              Crea una linea di quattro gettoni per vincere
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Casual 🎲</span>
+              <a href="../games/forza4/forza4.html" class="game-link">Gioca</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="arcade">
+          <img src="../images/games/pong.gif" alt="Pong" class="game-image" />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/pong-icon.png"
+                alt="Pong Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Pong</h3>
+            </div>
+            <p class="game-description">
+              Il classico gioco di tennis da tavolo virtuale
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Arcade 🕹️</span>
+              <a href="../games/pong/pong.html" class="game-link">Gioca</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="intelletto">
+          <img src="../images/games/sudoku.gif" alt="Sudoku" class="game-image" />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/sudoku-icon.png"
+                alt="Sudoku Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Sudoku</h3>
+            </div>
+            <p class="game-description">
+              Riempi la griglia con numeri da 1 a 9 senza ripetizioni
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Intelletto 🧠</span>
+              <a href="../games/sudoku/sudoku.html" class="game-link">Gioca</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="casual">
+          <img src="../images/games/sassocartaforbici.gif" alt="Sasso Carta Forbici" class="game-image" />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/sassocartaforbici-icon.png"
+                alt="Sasso Carta Forbici Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Sasso Carta Forbici</h3>
+            </div>
+            <p class="game-description">
+              Sfida il computer nel classico gioco di mano
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Casual 🎲</span>
+              <a href="../games/sassocartaforbici/sassocartaforbici.html" class="game-link">Gioca</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="arcade">
+          <img
+            src="../images/games/tetris.gif"
+            alt="Tetris"
+            class="game-image"
+          />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/tetris-icon.png"
+                alt="Tetris Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Tetris</h3>
+            </div>
+            <p class="game-description">
+              Disponi i tetramini e completa le linee
+            </p>
+            <div class="game-footer">
+              <span class="game-category">Arcade 🕹️</span>
+              <a href="../games/tetris/tetris.html" class="game-link">Gioca</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card" data-category="casual">
+          <img src="../images/games/tris.gif" alt="Tris" class="game-image" />
+          <div class="game-info">
+            <div class="game-header">
+              <img
+                src="../images/icons/tris-icon.png"
+                alt="Tris Icon"
+                class="game-icon"
+              />
+              <h3 class="game-name">Tris</h3>
+            </div>
+            <p class="game-description">Fai tre simboli in fila per vincere</p>
+            <div class="game-footer">
+              <span class="game-category">Casual 🎲</span>
+              <a href="../games/tris/tris.html" class="game-link">Gioca</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="copyright">
+          © 2025 minigiochi - Tutti i diritti riservati
+        </div>
+        <div class="footer-links">
+          <a href="../support/footer/privacy.html" class="footer-link"
+            >Privacy</a
+          >
+          <a href="../support/footer/terms.html" class="footer-link"
+            >Termini di servizio</a
+          >
+          <a href="../support/footer/cookies.html" class="footer-link"
+            >Cookie</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filters = document.querySelectorAll(".category-filter");
+        const games = document.querySelectorAll(".game-card");
+
+        filters.forEach((filter) => {
+          filter.addEventListener("click", function () {
+            const category = this.getAttribute("data-category");
+
+            filters.forEach((f) => f.classList.remove("active"));
+            this.classList.add("active");
+
+            games.forEach((game) => {
+              if (category === "all") {
+                game.style.display = "block";
+              } else {
+                if (game.getAttribute("data-category") === category) {
+                  game.style.display = "block";
+                } else {
+                  game.style.display = "none";
+                }
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
