@@ -135,6 +135,11 @@ Gamezy was originally created as a school project and can continue to be improve
 GitHub:
 **[github.com/Lore1677](https://github.com/Lore1677)**
 
+**FraSpazzz**
+
+GitHub:
+**[github.com/FraSpazzz](https://github.com/FraSpazzz)**
+
 ---
 
 ⭐ If you like the project, feel free to check out the repository!
